@@ -17,7 +17,21 @@
 
     <button onclick="calculate(3)" >+3</button>
 
+    <button onclick="calculate(4)" >+4</button>
+
+    <button onclick="calculate(5)" >+5</button>
+
     <button onclick=" calculate(`reset`) " >reset quantity</button>
+
+    <button onclick="calculate(- 1)" >remove from cart</button>
+
+    
+
+    <button onclick="calculate(- 2)" >-2</button>
+
+    <button onclick="calculate( - 3)" >-3</button>
+
+    
 
     <p class="js-total" ></p>
 
@@ -34,6 +48,10 @@
             cartquantity = 0
         }else{
             cartquantity = cartquantity + con 
+        }
+
+        if(cartquantity < 0){
+            cartquantity = 0
         }
 
         localStorage.setItem('cartquantity', JSON.stringify(cartquantity));
