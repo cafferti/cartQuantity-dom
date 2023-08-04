@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+</head>
+<body>
+    
+    <button onclick="
+    console.log(`cartquantity: ${cartquantity}`)
+    const cart = document.querySelector(`.js-total`)
+    cart.innerHTML = `cart quantity: ${cartquantity} items`;
+   " >show quantity</button>
+
+
+    <button onclick="
+    cartquantity =cartquantity + 1
+    console.log(`cartquantity: ${cartquantity}`)
+    const cart = document.querySelector(`.js-total`)
+    cart.innerHTML = `cart quantity: ${cartquantity} items`;
+   " >Add Quantity</button>
+
+
+    <button
+    onclick="cartquantity = cartquantity + 2
+    console.log(`cartquantity: ${cartquantity} `)
+    const cart = document.querySelector(`.js-total`)
+    cart.innerHTML = `cart quantity: ${cartquantity} items`;
+    ">+2</button>
+
+    <button onclick="cartquantity = cartquantity + 3
+    console.log(`cartquantity: ${cartquantity}`)
+    const cart = document.querySelector(`.js-total`)
+    cart.innerHTML = `cart quantity: ${cartquantity} items`;
+    " >+3</button>
+    
+    <button onclick="cartquantity = 0
+    console.log(`cartquantity: ${cartquantity}`);  const cart = document.querySelector(`.js-total`)
+    cart.innerHTML = `cart quantity: ${cartquantity} items`;
+    " >reset quantity</button>
+
+
+    <p class="js-total"></p>
+
+<script>
+    let cartquantity = 0
+    console.log(`cartquantity ${cartquantity}`);
+
+   
+
+</script>
+</body>
+</html>
