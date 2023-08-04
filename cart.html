@@ -7,48 +7,38 @@
 </head>
 <body>
     
-    <button onclick="
-    console.log(`cartquantity: ${cartquantity}`)
-    const cart = document.querySelector(`.js-total`)
-    cart.innerHTML = `cart quantity: ${cartquantity} items`;
-   " >show quantity</button>
+    <button onclick=" calculate(`display`) " >show quantity</button>
 
 
-    <button onclick="
-    cartquantity =cartquantity + 1
-    console.log(`cartquantity: ${cartquantity}`)
-    const cart = document.querySelector(`.js-total`)
-    cart.innerHTML = `cart quantity: ${cartquantity} items`;
-   " >Add Quantity</button>
+    <button onclick="calculate(1)" >Add Quantity</button>
 
 
-    <button
-    onclick="cartquantity = cartquantity + 2
-    console.log(`cartquantity: ${cartquantity} `)
-    const cart = document.querySelector(`.js-total`)
-    cart.innerHTML = `cart quantity: ${cartquantity} items`;
-    ">+2</button>
+    <button onclick=" calculate(2) ">+2</button>
 
-    <button onclick="cartquantity = cartquantity + 3
-    console.log(`cartquantity: ${cartquantity}`)
-    const cart = document.querySelector(`.js-total`)
-    cart.innerHTML = `cart quantity: ${cartquantity} items`;
-    " >+3</button>
-    
-    <button onclick="cartquantity = 0
-    console.log(`cartquantity: ${cartquantity}`);  const cart = document.querySelector(`.js-total`)
-    cart.innerHTML = `cart quantity: ${cartquantity} items`;
-    " >reset quantity</button>
+    <button onclick="calculate(3)" >+3</button>
 
+    <button onclick=" calculate(`reset`) " >reset quantity</button>
 
-    <p class="js-total"></p>
+    <p class="js-total" ></p>
 
 <script>
-    let cartquantity = 0
-    console.log(`cartquantity ${cartquantity}`);
 
-   
+    let cartquantity = JSON.parse(localStorage.getItem('cartquantity'))
 
+
+    function calculate(con){
+            
+        if(con === `display`){
+            cartquantity = cartquantity 
+        }else if(con === `reset`){
+            cartquantity = 0
+        }else{
+            cartquantity = cartquantity + con 
+        }
+
+        localStorage.setItem('cartquantity', JSON.stringify(cartquantity));
+        document.querySelector(`.js-total`).innerHTML = `cartquantity; ${cartquantity}`
+    }
 </script>
 </body>
 </html>
